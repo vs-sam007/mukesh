@@ -8,18 +8,18 @@ import ProductCard from '@/components/ProductCard';
 import { ChevronDown, SlidersHorizontal } from 'lucide-react';
 
 const products = [
-    { id: 'cat-1', name: 'Himalaya Baby Powder', price: 180, mrp: 200, weight: '400g', image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4', discount: 10, rating: 4.5 },
-    { id: 'cat-2', name: 'Dettol Original Liquid Handwash', price: 199, mrp: 220, weight: '900ml', image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f', discount: 9, rating: 4.8 },
-    { id: 'cat-3', name: 'Kissan Mixed Fruit Jam', price: 220, mrp: 240, weight: '700g', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b', discount: 0, rating: 4.2 },
-    { id: 'cat-4', name: 'Brooke Bond Red Label Tea', price: 260, mrp: 300, weight: '500g', image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12', discount: 13, rating: 4.6 },
-    { id: 'cat-5', name: 'Tata Salt Vacuum Evaporated', price: 24, mrp: 28, weight: '1kg', image: 'https://www.bigbasket.com/media/uploads/p/l/241600_5-tata-salt-iodized.jpg', discount: 0, rating: 4.7 },
-    { id: 'cat-6', name: 'Britannia Good Day Cashew Cookies', price: 35, mrp: 40, weight: '200g', image: 'https://www.bigbasket.com/media/uploads/p/l/264491_12-britannia-good-day-cookies-cashew.jpg', discount: 0, rating: 4.5 },
-    { id: 'cat-7', name: 'Surf Excel Excel Matic Top Load', price: 450, mrp: 500, weight: '2kg', image: 'https://www.bigbasket.com/media/uploads/p/l/266976_8-surf-excel-detergent-powder-matic-top-load.jpg', discount: 10, rating: 4.8 },
-    { id: 'cat-8', name: 'Haldirams Bhujia Sev', price: 110, mrp: 120, weight: '400g', image: 'https://www.bigbasket.com/media/uploads/p/l/10000574_17-haldirams-namkeen-bhujia-sev.jpg', discount: 0, rating: 4.4 },
-    { id: 'cat-9', name: 'Amul Taaza Homogenised Toned Milk', price: 72, mrp: 76, weight: '1 L', image: 'https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg', discount: 5, rating: 4.9 },
-    { id: 'cat-10', name: 'Fortune Sunlite Refined Sunflower Oil', price: 145, mrp: 160, weight: '1 L', image: 'https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg', discount: 9, rating: 4.6 },
-    { id: 'cat-11', name: 'Aashirvaad Shudh Chakki Atta', price: 255, mrp: 280, weight: '5 kg', image: 'https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg', discount: 8, rating: 4.8 },
-    { id: 'cat-12', name: 'Maggi 2-Minute Noodles Masala', price: 140, mrp: 160, weight: '840g', image: 'https://www.bigbasket.com/media/uploads/p/l/266109_18-maggi-2-minute-instant-noodles-masala.jpg', discount: 12, rating: 4.7 },
+    { id: 'cat-1', title: 'Himalaya Baby Powder', price: '₹180', originalPrice: '₹200', weight: '400g', image: 'https://images.unsplash.com/photo-1515488042361-ee00e0ddd4e4', discount: '10% OFF', time: '20 MINS' },
+    { id: 'cat-2', title: 'Dettol Original Liquid Handwash', price: '₹199', originalPrice: '₹220', weight: '900ml', image: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f', discount: '9% OFF', time: '25 MINS' },
+    { id: 'cat-3', title: 'Kissan Mixed Fruit Jam', price: '₹220', originalPrice: '₹240', weight: '700g', image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b', time: '15 MINS' },
+    { id: 'cat-4', title: 'Brooke Bond Red Label Tea', price: '₹260', originalPrice: '₹300', weight: '500g', image: 'https://images.unsplash.com/photo-1597481499750-3e6b22637e12', discount: '13% OFF', time: '10 MINS' },
+    { id: 'cat-5', title: 'Tata Salt Vacuum Evaporated', price: '₹24', originalPrice: '₹28', weight: '1kg', image: 'https://www.bigbasket.com/media/uploads/p/l/241600_5-tata-salt-iodized.jpg', time: '30 MINS' },
+    { id: 'cat-6', title: 'Britannia Good Day Cashew Cookies', price: '₹35', originalPrice: '₹40', weight: '200g', image: 'https://www.bigbasket.com/media/uploads/p/l/264491_12-britannia-good-day-cookies-cashew.jpg', time: '20 MINS' },
+    { id: 'cat-7', title: 'Surf Excel Excel Matic Top Load', price: '₹450', originalPrice: '₹500', weight: '2kg', image: 'https://www.bigbasket.com/media/uploads/p/l/266976_8-surf-excel-detergent-powder-matic-top-load.jpg', discount: '10% OFF', time: '40 MINS' },
+    { id: 'cat-8', title: 'Haldirams Bhujia Sev', price: '₹110', originalPrice: '₹120', weight: '400g', image: 'https://www.bigbasket.com/media/uploads/p/l/10000574_17-haldirams-namkeen-bhujia-sev.jpg', time: '15 MINS' },
+    { id: 'cat-9', title: 'Amul Taaza Homogenised Toned Milk', price: '₹72', originalPrice: '₹76', weight: '1 L', image: 'https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg', discount: '5% OFF', time: '10 MINS' },
+    { id: 'cat-10', title: 'Fortune Sunlite Refined Sunflower Oil', price: '₹145', originalPrice: '₹160', weight: '1 L', image: 'https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg', discount: '9% OFF', time: '35 MINS' },
+    { id: 'cat-11', title: 'Aashirvaad Shudh Chakki Atta', price: '₹255', originalPrice: '₹280', weight: '5 kg', image: 'https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg', discount: '8% OFF', time: '45 MINS' },
+    { id: 'cat-12', title: 'Maggi 2-Minute Noodles Masala', price: '₹140', originalPrice: '₹160', weight: '840g', image: 'https://www.bigbasket.com/media/uploads/p/l/266109_18-maggi-2-minute-instant-noodles-masala.jpg', discount: '12% OFF', time: '15 MINS' },
 ];
 
 export default function CategoryPage() {

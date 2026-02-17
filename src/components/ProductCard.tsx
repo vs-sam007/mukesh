@@ -4,21 +4,17 @@ import React from 'react';
 import { Plus, Minus, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCart } from '@/context/CartContext';
-
-export interface ProductProps {
-    id: string;
-    name: string;
-    image: string;
-    price: number;
-    mrp?: number;
-    weight: string;
-    discount?: number;
-    rating?: number;
-    isNew?: boolean;
-}
+import { ProductProps } from '@/types/product';
 
 export default function ProductCard({ product }: { product: ProductProps }) {
     const { items, addItem, updateQuantity, removeItem } = useCart();
+
+    // Helper to parse price string (e.g., "₹180" -> 180)
+    const parsePrice = (priceStr: string): number => {
+        return Number(priceStr.replace(/[^0-9.]/g, '')) || 0;
+    };
+
+    const numericPrice = parsePrice(product.price);
 
     // Find if item is in cart
     const cartItem = items.find(item => item.id === product.id);
@@ -28,8 +24,8 @@ export default function ProductCard({ product }: { product: ProductProps }) {
         e.stopPropagation();
         addItem({
             id: product.id,
-            name: product.name,
-            price: product.price,
+            name: product.title,
+            price: numericPrice,
             image: product.image,
             quantity: 1,
             weight: product.weight
@@ -59,7 +55,7 @@ export default function ProductCard({ product }: { product: ProductProps }) {
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
                 {product.discount && (
                     <span className="bg-[#E11D2E] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide shadow-md shadow-red-500/20">
-                        {product.discount}% OFF
+                        {product.discount}
                     </span>
                 )}
                 {product.isNew && (
@@ -73,7 +69,7 @@ export default function ProductCard({ product }: { product: ProductProps }) {
             <div className="relative h-32 md:h-40 bg-white rounded-xl flex items-center justify-center p-4 overflow-hidden group-hover:bg-white transition-colors border border-gray-50">
                 <motion.img
                     src={product.image}
-                    alt={product.name}
+                    alt={product.title}
                     className="w-full h-full object-contain drop-shadow-md mix-blend-multiply"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     transition={{ duration: 0.3 }}
@@ -91,13 +87,13 @@ export default function ProductCard({ product }: { product: ProductProps }) {
                 </div>
 
                 <h3 className="text-gray-900 font-bold text-sm md:text-base leading-tight mt-1 line-clamp-2 min-h-[2.5em] group-hover:text-[#E11D2E] transition-colors">
-                    {product.name}
+                    {product.title}
                 </h3>
 
                 <div className="flex items-end gap-2 mt-auto">
                     <div className="flex flex-col">
-                        <span className="text-gray-400 text-xs line-through">₹{product.mrp}</span>
-                        <span className="text-gray-900 font-bold text-lg">₹{product.price}</span>
+                        <span className="text-gray-400 text-xs line-through">{product.originalPrice}</span>
+                        <span className="text-gray-900 font-bold text-lg">{product.price}</span>
                     </div>
 
                     {/* Add Button / Quantity Stepper */}

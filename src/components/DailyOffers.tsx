@@ -5,11 +5,11 @@ import { Timer, ArrowRight } from 'lucide-react';
 import ProductCard from './ProductCard';
 
 const offers = [
-    { id: '1', name: 'Amul Taaza Fresh Toned Milk', image: '/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png', price: 52, mrp: 56, weight: '1 L', discount: 8, rating: 4.8 },
-    { id: '2', name: 'Fortune Sunlite Refined Oil', image: '/images/Gemini_Generated_Image_yzlnbayzlnbayzln.png', price: 145, mrp: 190, weight: '1 L', discount: 24, rating: 4.6 },
-    { id: '3', name: 'Surf Excel Easy Wash Detergent', image: '/images/Gemini_Generated_Image_ai7v44ai7v44ai7v.png', price: 99, mrp: 140, weight: '1 kg', discount: 29, rating: 4.7 },
-    { id: '4', name: 'India Gate Basmati Rice', image: '/images/Gemini_Generated_Image_dq0kgcdq0kgcdq0k.png', price: 85, mrp: 120, weight: '1 kg', discount: 30, rating: 4.9 },
-    { id: '5', name: 'Tata Tea Premium', image: '/images/Gemini_Generated_Image_fvw538fvw538fvw5.png', price: 130, mrp: 160, weight: '250 g', discount: 18, rating: 4.5 },
+    { id: '1', title: 'Amul Taaza Fresh Toned Milk', image: '/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png', price: '₹52', originalPrice: '₹56', weight: '1 L', discount: '8% OFF', time: '20 MINS' },
+    { id: '2', title: 'Fortune Sunlite Refined Oil', image: '/images/Gemini_Generated_Image_yzlnbayzlnbayzln.png', price: '₹145', originalPrice: '₹190', weight: '1 L', discount: '24% OFF', time: '35 MINS' },
+    { id: '3', title: 'Surf Excel Easy Wash Detergent', image: '/images/Gemini_Generated_Image_ai7v44ai7v44ai7v.png', price: '₹99', originalPrice: '₹140', weight: '1 kg', discount: '29% OFF', time: '40 MINS' },
+    { id: '4', title: 'India Gate Basmati Rice', image: '/images/Gemini_Generated_Image_dq0kgcdq0kgcdq0k.png', price: '₹85', originalPrice: '₹120', weight: '1 kg', discount: '30% OFF', time: '45 MINS' },
+    { id: '5', title: 'Tata Tea Premium', image: '/images/Gemini_Generated_Image_fvw538fvw538fvw5.png', price: '₹130', originalPrice: '₹160', weight: '250 g', discount: '18% OFF', time: '25 MINS' },
 ];
 
 export default function DailyOffers() {

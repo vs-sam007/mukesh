@@ -5,12 +5,12 @@ import ProductCard from './ProductCard';
 import { Sparkles, ArrowRight } from 'lucide-react';
 
 const featured = [
-    { id: '11', name: 'Maggi 2-Minute Noodles', image: '/images/Gemini_Generated_Image_s8ptxas8ptxas8pt.png', price: 12, mrp: 14, weight: '70 g', discount: 14, rating: 4.8 },
-    { id: '12', name: 'Coca Cola Soft Drink', image: '/images/Gemini_Generated_Image_socfc6socfc6socf.png', price: 40, mrp: 45, weight: '750 ml', discount: 11, rating: 4.7 },
-    { id: '13', name: 'Lays Magic Masala Chips', image: '/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png', price: 20, mrp: 20, weight: '50 g', discount: 0, rating: 4.9 },
-    { id: '14', name: 'Britannia Good Day Butter', image: '/images/Gemini_Generated_Image_2zif1h2zif1h2zif.png', price: 25, mrp: 30, weight: '200 g', discount: 16, rating: 4.6 },
-    { id: '15', name: 'Dettol Antiseptic Liquid', image: '/images/Gemini_Generated_Image_6eg7hl6eg7hl6eg7.png', price: 60, mrp: 65, weight: '125 ml', discount: 7, rating: 4.8 },
-    { id: '16', name: 'Harpic Toilet Cleaner', image: '/images/Gemini_Generated_Image_a9sphra9sphra9sp.png', price: 95, mrp: 105, weight: '500 ml', discount: 9, rating: 4.7 },
+    { id: '11', title: 'Maggi 2-Minute Noodles', image: '/images/Gemini_Generated_Image_s8ptxas8ptxas8pt.png', price: '₹12', originalPrice: '₹14', weight: '70 g', discount: '14% OFF', time: '10 MINS' },
+    { id: '12', title: 'Coca Cola Soft Drink', image: '/images/Gemini_Generated_Image_socfc6socfc6socf.png', price: '₹40', originalPrice: '₹45', weight: '750 ml', discount: '11% OFF', time: '10 MINS' },
+    { id: '13', title: 'Lays Magic Masala Chips', image: '/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png', price: '₹20', originalPrice: '₹20', weight: '50 g', time: '10 MINS' },
+    { id: '14', title: 'Britannia Good Day Butter', image: '/images/Gemini_Generated_Image_2zif1h2zif1h2zif.png', price: '₹25', originalPrice: '₹30', weight: '200 g', discount: '16% OFF', time: '10 MINS' },
+    { id: '15', title: 'Dettol Antiseptic Liquid', image: '/images/Gemini_Generated_Image_6eg7hl6eg7hl6eg7.png', price: '₹60', originalPrice: '₹65', weight: '125 ml', discount: '7% OFF', time: '10 MINS' },
+    { id: '16', title: 'Harpic Toilet Cleaner', image: '/images/Gemini_Generated_Image_a9sphra9sphra9sp.png', price: '₹95', originalPrice: '₹105', weight: '500 ml', discount: '9% OFF', time: '10 MINS' },
 ];
 
 export default function FeaturedProducts() {

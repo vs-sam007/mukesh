@@ -5,10 +5,10 @@ import ProductCard from './ProductCard';
 import { ArrowRight } from 'lucide-react';
 
 const newArrivals = [
-    { id: '21', name: 'Epigamia Greek Yogurt', image: '/images/Gemini_Generated_Image_b5mg9xb5mg9xb5mg.png', price: 60, mrp: 60, weight: '90 g', isNew: true, rating: 4.5 },
-    { id: '22', name: 'Paper Boat Coconut Water', image: '/images/Gemini_Generated_Image_dpbbxndpbbxndpbb.png', price: 50, mrp: 55, weight: '200 ml', discount: 9, isNew: true, rating: 4.6 },
-    { id: '23', name: 'Whole Wheat Brown Bread', image: '/images/Gemini_Generated_Image_e7hwz4e7hwz4e7hw.png', price: 45, mrp: 50, weight: '400 g', discount: 10, isNew: true, rating: 4.4 },
-    { id: '24', name: 'Raw Pressery Almond Milk', image: '/images/Gemini_Generated_Image_fghexafghexafghe.png', price: 120, mrp: 150, weight: '1 L', discount: 20, isNew: true, rating: 4.7 },
+    { id: '21', title: 'Epigamia Greek Yogurt', image: '/images/Gemini_Generated_Image_b5mg9xb5mg9xb5mg.png', price: '₹60', originalPrice: '₹60', weight: '90 g', isNew: true, time: '10 MINS' },
+    { id: '22', title: 'Paper Boat Coconut Water', image: '/images/Gemini_Generated_Image_dpbbxndpbbxndpbb.png', price: '₹50', originalPrice: '₹55', weight: '200 ml', discount: '9% OFF', isNew: true, time: '15 MINS' },
+    { id: '23', title: 'Whole Wheat Brown Bread', image: '/images/Gemini_Generated_Image_e7hwz4e7hwz4e7hw.png', price: '₹45', originalPrice: '₹50', weight: '400 g', discount: '10% OFF', isNew: true, time: '10 MINS' },
+    { id: '24', title: 'Raw Pressery Almond Milk', image: '/images/Gemini_Generated_Image_fghexafghexafghe.png', price: '₹120', originalPrice: '₹150', weight: '1 L', discount: '20% OFF', isNew: true, time: '20 MINS' },
 ];
 
 export default function NewArrivals() {

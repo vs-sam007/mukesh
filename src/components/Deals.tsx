@@ -21,53 +21,53 @@ export default function Deals() {
                     {[
                         {
                             id: 'deal-1',
-                            name: "Amul Taaza Homogenised Toned Milk",
-                            price: 72,
-                            mrp: 76,
+                            title: "Amul Taaza Homogenised Toned Milk",
+                            price: "₹72",
+                            originalPrice: "₹76",
                             weight: "1 L",
                             image: "https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg",
-                            discount: 5,
-                            rating: 4.8
+                            discount: "5% OFF",
+                            time: "8 MINS"
                         },
                         {
                             id: 'deal-2',
-                            name: "Lay's India's Magic Masala Chips",
-                            price: 45,
-                            mrp: 50,
+                            title: "Lay's India's Magic Masala Chips",
+                            price: "₹45",
+                            originalPrice: "₹50",
                             weight: "115g",
                             image: "https://www.bigbasket.com/media/uploads/p/l/294297-3_3-lays-potato-chips-indias-magic-masala.jpg",
-                            discount: 10,
-                            rating: 4.7
+                            discount: "10% OFF",
+                            time: "15 MINS"
                         },
                         {
                             id: 'deal-3',
-                            name: "Coca-Cola Original Taste Soft Drink",
-                            price: 38,
-                            mrp: 40,
+                            title: "Coca-Cola Original Taste Soft Drink",
+                            price: "₹38",
+                            originalPrice: "₹40",
                             weight: "750ml",
                             image: "https://www.bigbasket.com/media/uploads/p/l/251006_11-coca-cola-soft-drink-original-taste.jpg",
-                            discount: 5,
-                            rating: 4.6
+                            discount: "5% OFF",
+                            time: "12 MINS"
                         },
                         {
                             id: 'deal-4',
-                            name: "Fortune Sunlite Refined Sunflower Oil",
-                            price: 145,
-                            mrp: 160,
+                            title: "Fortune Sunlite Refined Sunflower Oil",
+                            price: "₹145",
+                            originalPrice: "₹160",
                             weight: "1 L",
                             image: "https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg",
-                            discount: 9,
-                            rating: 4.8
+                            discount: "9% OFF",
+                            time: "20 MINS"
                         },
                         {
                             id: 'deal-5',
-                            name: "Aashirvaad Shudh Chakki Atta",
-                            price: 255,
-                            mrp: 280,
+                            title: "Aashirvaad Shudh Chakki Atta",
+                            price: "₹255",
+                            originalPrice: "₹280",
                             weight: "5 kg",
                             image: "https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg",
-                            discount: 8,
-                            rating: 4.9
+                            discount: "8% OFF",
+                            time: "25 MINS"
                         }
                     ].map((product) => (
                         <div key={product.id} className="min-w-[200px] md:min-w-[240px] snap-center">
