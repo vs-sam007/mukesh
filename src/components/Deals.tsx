@@ -18,61 +18,62 @@ export default function Deals() {
 
                 {/* Horizontal Scroll Container */}
                 <div className="flex gap-4 overflow-x-auto pb-8 snap-x scrollbar-hide -mx-4 px-4 md:mx-0 md:px-0">
-                    <div className="min-w-[200px] md:min-w-[240px] snap-center">
-                        <ProductCard
-                            title="Amul Taaza Homogenised Toned Milk"
-                            price="₹72"
-                            originalPrice="₹76"
-                            weight="1 L"
-                            image="https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg"
-                            discount="5%"
-                            time="8 MINS"
-                        />
-                    </div>
-                    <div className="min-w-[200px] md:min-w-[240px] snap-center">
-                        <ProductCard
-                            title="Lay's India's Magic Masala Chips"
-                            price="₹45"
-                            originalPrice="₹50"
-                            weight="115g"
-                            image="https://www.bigbasket.com/media/uploads/p/l/294297-3_3-lays-potato-chips-indias-magic-masala.jpg"
-                            discount="10%"
-                            time="15 MINS"
-                        />
-                    </div>
-                    <div className="min-w-[200px] md:min-w-[240px] snap-center">
-                        <ProductCard
-                            title="Coca-Cola Original Taste Soft Drink"
-                            price="₹38"
-                            originalPrice="₹40"
-                            weight="750ml"
-                            image="https://www.bigbasket.com/media/uploads/p/l/251006_11-coca-cola-soft-drink-original-taste.jpg"
-                            discount="5%"
-                            time="12 MINS"
-                        />
-                    </div>
-                    <div className="min-w-[200px] md:min-w-[240px] snap-center">
-                        <ProductCard
-                            title="Fortune Sunlite Refined Sunflower Oil"
-                            price="₹145"
-                            originalPrice="₹160"
-                            weight="1 L"
-                            image="https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg"
-                            discount="9%"
-                            time="20 MINS"
-                        />
-                    </div>
-                    <div className="min-w-[200px] md:min-w-[240px] snap-center">
-                        <ProductCard
-                            title="Aashirvaad Shudh Chakki Atta"
-                            price="₹255"
-                            originalPrice="₹280"
-                            weight="5 kg"
-                            image="https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg"
-                            discount="8%"
-                            time="25 MINS"
-                        />
-                    </div>
+                    {[
+                        {
+                            id: 'deal-1',
+                            name: "Amul Taaza Homogenised Toned Milk",
+                            price: 72,
+                            mrp: 76,
+                            weight: "1 L",
+                            image: "https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg",
+                            discount: 5,
+                            rating: 4.8
+                        },
+                        {
+                            id: 'deal-2',
+                            name: "Lay's India's Magic Masala Chips",
+                            price: 45,
+                            mrp: 50,
+                            weight: "115g",
+                            image: "https://www.bigbasket.com/media/uploads/p/l/294297-3_3-lays-potato-chips-indias-magic-masala.jpg",
+                            discount: 10,
+                            rating: 4.7
+                        },
+                        {
+                            id: 'deal-3',
+                            name: "Coca-Cola Original Taste Soft Drink",
+                            price: 38,
+                            mrp: 40,
+                            weight: "750ml",
+                            image: "https://www.bigbasket.com/media/uploads/p/l/251006_11-coca-cola-soft-drink-original-taste.jpg",
+                            discount: 5,
+                            rating: 4.6
+                        },
+                        {
+                            id: 'deal-4',
+                            name: "Fortune Sunlite Refined Sunflower Oil",
+                            price: 145,
+                            mrp: 160,
+                            weight: "1 L",
+                            image: "https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg",
+                            discount: 9,
+                            rating: 4.8
+                        },
+                        {
+                            id: 'deal-5',
+                            name: "Aashirvaad Shudh Chakki Atta",
+                            price: 255,
+                            mrp: 280,
+                            weight: "5 kg",
+                            image: "https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg",
+                            discount: 8,
+                            rating: 4.9
+                        }
+                    ].map((product) => (
+                        <div key={product.id} className="min-w-[200px] md:min-w-[240px] snap-center">
+                            <ProductCard product={product} />
+                        </div>
+                    ))}
                 </div>
             </div>
         </section>

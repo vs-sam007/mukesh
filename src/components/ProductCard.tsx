@@ -5,7 +5,7 @@ import { Plus, Minus, Star } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCart } from '@/context/CartContext';
 
-interface ProductProps {
+export interface ProductProps {
     id: string;
     name: string;
     image: string;
