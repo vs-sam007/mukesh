@@ -1,10 +1,16 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { Search, ShoppingCart, MapPin, Menu, Zap, X } from 'lucide-react';
+import { Search, ShoppingCart, Menu, X, User, Heart, ChevronDown } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
 import { useCart } from '@/context/CartContext';
+import TrustStrip from '@/components/TrustStrip';
+
+const CATEGORIES = [
+    "Groceries", "Snacks & Beverages", "Personal Care", "Beauty",
+    "Baby Care", "Home & Kitchen", "Cleaning", "Electronics"
+];
 
 export default function Navbar() {
     const [scrolled, setScrolled] = useState(false);
@@ -13,125 +19,175 @@ export default function Navbar() {
     const { openDrawer, itemCount } = useCart();
 
     useEffect(() => {
-        const handleScroll = () => setScrolled(window.scrollY > 20);
+        const handleScroll = () => setScrolled(window.scrollY > 40);
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
     }, []);
 
     return (
         <>
-            <motion.header
-                initial={{ y: -100 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5 }}
-                className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled ? 'bg-white/90 backdrop-blur-xl shadow-lg border-b border-red-50' : 'bg-transparent'
-                    }`}
-            >
-                {/* Top Bar Removed */}
+            <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+                <div className={`transition-all duration-300 overflow-hidden ${scrolled ? 'h-0 opacity-0' : 'h-auto opacity-100'}`}>
+                    <TrustStrip />
+                </div>
 
-                <nav className="max-w-7xl mx-auto px-4 md:px-6 py-3 md:py-4 flex items-center justify-between gap-4 md:gap-8">
+                <header
+                    className={`relative w-full transition-all duration-300 border-b ${scrolled
+                        ? 'bg-[#0f1115]/90 backdrop-blur-xl shadow-lg border-transparent py-2'
+                        : 'bg-transparent border-transparent py-4'
+                        }`}
+                >
+                    <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between gap-4 md:gap-8">
 
-                    {/* Logo - Red Brand */}
-                    <Link href="/" className="flex items-center gap-2 z-50">
-                        <div className="w-10 h-10 bg-gradient-to-br from-[#E11D2E] to-[#BE123C] text-white rounded-xl flex items-center justify-center font-display font-bold text-2xl shadow-lg shadow-red-500/30">
-                            M
-                        </div>
-                        <span className={`font-display font-bold text-xl hidden sm:block tracking-tight ${scrolled ? 'text-gray-900' : 'text-gray-900 bg-white/50 px-2 py-1 rounded-lg backdrop-blur-sm'}`}>
-                            Mukesh <span className="text-[#E11D2E]">Store</span>
-                        </span>
-                    </Link>
-
-                    {/* Location Selector */}
-                    <div className={`hidden lg:flex flex-col leading-tight cursor-pointer p-2 rounded-lg transition-all group ${scrolled ? 'hover:bg-red-50' : 'bg-white/80 backdrop-blur-md border border-white/40 shadow-sm hover:bg-white'}`}>
-                        <span className="text-[10px] text-gray-600 font-bold uppercase tracking-wider group-hover:text-[#E11D2E] transition-colors">Delivering to</span>
-                        <span className="text-sm font-bold text-gray-900 flex items-center gap-1">
-                            Lucknow, 226001 <MapPin size={12} className="text-[#E11D2E]" />
-                        </span>
-                    </div>
-
-                    {/* Search Bar - White with Red Glow Focus */}
-                    <div className={`hidden md:flex flex-1 max-w-xl relative transition-all duration-300 ${isSearchFocused ? 'scale-[1.02]' : ''}`}>
-                        <div className="relative w-full group">
-                            <input
-                                type="text"
-                                placeholder="Search 'milk', 'chips', 'bread'..."
-                                onFocus={() => setIsSearchFocused(true)}
-                                onBlur={() => setIsSearchFocused(false)}
-                                className={`w-full pl-12 pr-4 py-3 rounded-2xl border text-gray-900 placeholder-gray-500 focus:outline-none focus:border-[#E11D2E]/50 focus:ring-4 focus:ring-[#E11D2E]/10 transition-all text-sm shadow-sm ${scrolled ? 'bg-[#FFF7F7] border-red-100' : 'bg-white/90 border-white/50 backdrop-blur-md'}`}
-                            />
-                            <Search className={`absolute left-4 top-1/2 -translate-y-1/2 transition-colors ${isSearchFocused ? 'text-[#E11D2E]' : 'text-gray-500'}`} size={20} />
-                        </div>
-                    </div>
-
-                    {/* Right Actions */}
-                    <div className="flex items-center gap-4 md:gap-6 shrink-0">
-                        <button className={`hidden md:flex transition-colors font-bold text-sm hover:underline decoration-[#E11D2E] underline-offset-4 ${scrolled ? 'text-gray-600 hover:text-[#E11D2E]' : 'text-gray-800 bg-white/50 px-3 py-1.5 rounded-lg backdrop-blur-sm hover:bg-white hover:text-[#E11D2E]'}`}>
-                            Login
-                        </button>
-
+                        {/* 1. Hamburger (Mobile) */}
                         <button
-                            className={`relative group p-2.5 rounded-xl transition-colors ${scrolled ? 'hover:bg-red-50' : 'bg-white/50 backdrop-blur-md hover:bg-white'}`}
-                            onClick={openDrawer}
-                        >
-                            <ShoppingCart size={24} className="text-gray-900 group-hover:text-[#E11D2E] transition-colors" />
-                            {itemCount > 0 && (
-                                <motion.span
-                                    initial={{ scale: 0 }}
-                                    animate={{ scale: 1 }}
-                                    key={itemCount}
-                                    className="absolute -top-1 -right-1 w-5 h-5 bg-[#E11D2E] text-white text-xs font-bold rounded-full flex items-center justify-center border-2 border-white shadow-md z-10"
-                                >
-                                    {itemCount}
-                                </motion.span>
-                            )}
-                        </button>
-
-                        <button
-                            className="md:hidden text-gray-900 hover:text-[#E11D2E] transition-colors"
+                            className="md:hidden p-2 -ml-2 text-white hover:bg-white/10 rounded-lg"
                             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
                         >
-                            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+                            <Menu size={24} />
                         </button>
-                    </div>
-                </nav>
 
-                {/* Mobile Search Bar */}
-                <div className="md:hidden px-4 pb-4">
-                    <div className="relative w-full">
-                        <input
-                            type="text"
-                            placeholder="Search essentials..."
-                            className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#FFF7F7] border border-red-100 text-gray-900 placeholder-gray-400 focus:outline-none focus:border-[#E11D2E]/50 text-sm shadow-sm"
-                        />
-                        <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={16} />
-                    </div>
-                </div>
-            </motion.header>
+                        {/* 2. Logo */}
+                        <Link href="/" className="flex items-center gap-2 shrink-0 group">
+                            <div className="w-10 h-10 bg-gradient-to-br from-[#E11D2E] to-[#BE123C] text-white rounded-xl flex items-center justify-center font-display font-bold text-2xl shadow-lg shadow-red-900/40 group-hover:scale-105 transition-transform">
+                                M
+                            </div>
+                            <div className="flex flex-col leading-none">
+                                <span className="font-display font-bold text-lg text-white tracking-tight">Mukesh</span>
+                                <span className="text-[10px] uppercase tracking-widest text-[#b8c0cc] font-medium">Departmental Store</span>
+                            </div>
+                        </Link>
 
-            {/* Mobile Menu Dropdown */}
+                        {/* 3. Search Bar (Centered & Prominent) */}
+                        <div className={`hidden md:flex flex-1 max-w-2xl relative transition-all duration-300 ${isSearchFocused ? 'scale-[1.01]' : ''}`}>
+                            <div className="relative w-full group">
+                                <input
+                                    type="text"
+                                    placeholder="Search for products, brands and more..."
+                                    onFocus={() => setIsSearchFocused(true)}
+                                    onBlur={() => setIsSearchFocused(false)}
+                                    className={`w-full pl-5 pr-12 py-2.5 rounded-full border border-transparent bg-[#1c212b] text-white placeholder-gray-500 focus:outline-none focus:bg-[#161a22] focus:border-[#E11D2E] focus:ring-4 focus:ring-[#E11D2E]/10 transition-all text-sm shadow-inner`}
+                                />
+                                <button className="absolute right-1.5 top-1.5 bottom-1.5 bg-[#E11D2E] hover:bg-[#BE123C] text-white px-4 rounded-full transition-colors flex items-center justify-center shadow-lg shadow-red-900/20">
+                                    <Search size={18} />
+                                </button>
+                            </div>
+                        </div>
+
+                        {/* 4. Right Actions */}
+                        <div className="flex items-center gap-1 md:gap-4 shrink-0">
+
+                            {/* Account */}
+                            <button className="hidden md:flex flex-col items-center justify-center min-w-[60px] p-1 rounded-lg hover:bg-white/5 group text-gray-300 hover:text-white transition-colors">
+                                <User size={22} strokeWidth={1.5} className="mb-0.5 group-hover:scale-110 transition-transform" />
+                                <span className="text-[10px] font-medium">Account</span>
+                            </button>
+
+                            {/* Wishlist */}
+                            <button className="hidden md:flex flex-col items-center justify-center min-w-[60px] p-1 rounded-lg hover:bg-white/5 group text-gray-300 hover:text-white transition-colors">
+                                <Heart size={22} strokeWidth={1.5} className="mb-0.5 group-hover:scale-110 transition-transform" />
+                                <span className="text-[10px] font-medium">Wishlist</span>
+                            </button>
+
+                            {/* Cart */}
+                            <button
+                                onClick={openDrawer}
+                                className="flex md:flex-col items-center justify-center min-w-[40px] md:min-w-[60px] p-1 rounded-lg hover:bg-white/5 group text-gray-300 hover:text-white transition-colors relative"
+                            >
+                                <ShoppingCart size={22} strokeWidth={1.5} className="mb-0.5 group-hover:scale-110 transition-transform" />
+                                <span className="hidden md:inline text-[10px] font-medium">Cart</span>
+                                {itemCount > 0 && (
+                                    <span className="absolute top-0 right-0 md:top-0 md:right-2 w-4 h-4 bg-[#E11D2E] text-white text-[10px] font-bold rounded-full flex items-center justify-center border-2 border-[#0f1115]">
+                                        {itemCount}
+                                    </span>
+                                )}
+                            </button>
+                        </div>
+                    </div>
+
+                    {/* 5. Mega Menu Strip (Desktop Only) */}
+                    <div className={`hidden md:block transition-all duration-300 ${scrolled ? 'h-0 opacity-0 overflow-hidden py-0' : 'h-auto opacity-100 py-2 border-t border-[#2a3140]/30 bg-[#0f1115]/80 backdrop-blur-md'}`}>
+                        <div className="max-w-7xl mx-auto px-6 flex items-center justify-between text-xs font-medium text-gray-400">
+                            {CATEGORIES.map((cat) => (
+                                <Link key={cat} href={`/category/${cat.toLowerCase().replace(/\s+/g, '-')}`} className="hover:text-white hover:bg-white/5 px-3 py-1.5 rounded-full transition-all whitespace-nowrap">
+                                    {cat}
+                                </Link>
+                            ))}
+                            <Link href="/deals" className="text-[#E11D2E] flex items-center gap-1 font-bold hover:bg-[#E11D2E]/10 px-3 py-1 rounded-full transition-colors">
+                                Today's Deals
+                            </Link>
+                        </div>
+                    </div>
+                </header>
+            </div>
+
+            {/* Spacer for Sticky Header removed/adjusted as Hero sits behind */}
+
+            {/* Mobile Menu Overlay */}
             <AnimatePresence>
                 {isMobileMenuOpen && (
-                    <motion.div
-                        initial={{ opacity: 0, height: 0 }}
-                        animate={{ opacity: 1, height: 'auto' }}
-                        exit={{ opacity: 0, height: 0 }}
-                        className="fixed top-[125px] left-0 right-0 bg-white/95 backdrop-blur-xl border-b border-red-50 z-40 md:hidden overflow-hidden shadow-xl"
-                    >
-                        <div className="p-4 flex flex-col gap-4">
-                            <div className="flex items-center gap-3 p-3 bg-red-50 rounded-lg border border-red-100">
-                                <MapPin size={18} className="text-[#E11D2E]" />
-                                <div className="flex flex-col">
-                                    <span className="text-xs text-gray-500">Delivering to</span>
-                                    <span className="text-sm font-bold text-gray-900">Lucknow, 226001</span>
+                    <>
+                        <motion.div
+                            initial={{ opacity: 0 }}
+                            animate={{ opacity: 1 }}
+                            exit={{ opacity: 0 }}
+                            onClick={() => setIsMobileMenuOpen(false)}
+                            className="fixed inset-0 bg-black/80 z-[60] md:hidden backdrop-blur-sm"
+                        />
+                        <motion.div
+                            initial={{ x: '-100%' }}
+                            animate={{ x: 0 }}
+                            exit={{ x: '-100%' }}
+                            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+                            className="fixed top-0 left-0 bottom-0 w-[85%] max-w-sm bg-[#161a22] z-[70] md:hidden shadow-2xl flex flex-col border-r border-[#2a3140]"
+                        >
+                            <div className="p-5 border-b border-[#2a3140] flex items-center justify-between">
+                                <div className="font-display font-bold text-lg text-white">Menu</div>
+                                <button onClick={() => setIsMobileMenuOpen(false)} className="p-2 hover:bg-white/10 rounded-full text-gray-400">
+                                    <X size={20} />
+                                </button>
+                            </div>
+
+                            <div className="p-4">
+                                <div className="relative w-full">
+                                    <input
+                                        type="text"
+                                        placeholder="Search products..."
+                                        className="w-full pl-10 pr-4 py-2.5 rounded-xl bg-[#0f1115] border border-[#2a3140] text-white placeholder-gray-500 focus:outline-none focus:border-[#E11D2E] text-sm"
+                                    />
+                                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-500" size={16} />
                                 </div>
                             </div>
-                            <Link href="/orders" className="p-3 hover:bg-gray-50 rounded-lg text-gray-900 font-medium transition-colors">My Orders</Link>
-                            <Link href="/profile" className="p-3 hover:bg-gray-50 rounded-lg text-gray-900 font-medium transition-colors">Profile</Link>
-                            <button className="p-3 bg-[#E11D2E] text-white font-bold rounded-lg mt-2 shadow-lg shadow-red-500/20 active:scale-95 transition-all">Login / Sign Up</button>
-                        </div>
-                    </motion.div>
+
+                            <div className="flex-1 overflow-y-auto p-4 space-y-1">
+                                <div className="text-xs font-bold text-[#6B7280] uppercase tracking-wider mb-2 px-2">Shop By Category</div>
+                                {CATEGORIES.map((cat) => (
+                                    <Link
+                                        key={cat}
+                                        href={`/category/${cat.toLowerCase().replace(/\s+/g, '-')}`}
+                                        className="flex items-center justify-between p-3 rounded-xl text-gray-300 hover:bg-white/5 font-medium active:bg-white/10 transition-all"
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {cat} <ChevronDown size={16} className="-rotate-90 text-gray-600" />
+                                    </Link>
+                                ))}
+                            </div>
+
+                            <div className="p-4 border-t border-[#2a3140] bg-[#0f1115] space-y-3">
+                                <button className="w-full py-3 rounded-xl bg-[#E11D2E] text-white font-bold shadow-lg shadow-red-900/20 active:scale-95 transition-all">
+                                    Login / Sign Up
+                                </button>
+                                <div className="flex justify-center gap-6 pt-2 text-gray-500">
+                                    <Link href="/contact" className="hover:text-white text-xs">Contact Us</Link>
+                                    <Link href="/faq" className="hover:text-white text-xs">Help</Link>
+                                    <Link href="/terms" className="hover:text-white text-xs">Terms</Link>
+                                </div>
+                            </div>
+                        </motion.div>
+                    </>
                 )}
             </AnimatePresence>
         </>
     );
 }
+

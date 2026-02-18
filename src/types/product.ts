@@ -6,7 +6,7 @@ export interface ProductProps {
     weight: string;
     image: string;
     discount?: string;
-    time: string;
+    time?: string;
     rating?: number;
     isNew?: boolean;
 }

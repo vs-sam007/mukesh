@@ -15,13 +15,14 @@ const featured = [
 
 export default function FeaturedProducts() {
     return (
-        <section className="py-10 px-4 max-w-7xl mx-auto bg-dark-card/30 rounded-3xl border border-white/5 my-10">
+        <section className="py-12 px-4 max-w-7xl mx-auto">
             <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center gap-2">
-                    <Sparkles className="text-yellow-400 fill-current" size={24} />
-                    <h2 className="text-2xl md:text-3xl font-display font-bold text-text-primary">Top Picks for You</h2>
+                <div>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-gray-900 mb-1">Top Picks for You</h2>
+                    <p className="text-gray-500 text-sm">Recommended based on your history</p>
                 </div>
-                <button className="hidden md:flex items-center gap-1 text-sm font-bold text-green hover:underline transition-colors">
+
+                <button className="hidden md:flex items-center gap-2 text-sm font-bold text-[#E11D2E] hover:bg-red-50 px-4 py-2 rounded-full transition-colors">
                     View All <ArrowRight size={16} />
                 </button>
             </div>
@@ -32,9 +33,10 @@ export default function FeaturedProducts() {
                 ))}
             </div>
 
-            <button className="md:hidden w-full mt-6 py-3 rounded-xl border border-white/10 text-text-primary font-bold text-sm bg-dark-card hover:bg-white/5 transition-colors">
+            <button className="md:hidden w-full mt-6 py-3 rounded-xl bg-gray-50 text-gray-900 font-bold text-sm hover:bg-gray-100 transition-colors">
                 View All Top Picks
             </button>
         </section>
     );
 }
+

@@ -3,32 +3,40 @@
 import React from 'react';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/Hero';
-import OffersMarquee from '@/components/OffersMarquee';
 import CategoryGrid from '@/components/CategoryGrid';
-import DailyOffers from '@/components/DailyOffers';
+import Deals from '@/components/Deals';
 import FeaturedProducts from '@/components/FeaturedProducts';
-import NewArrivals from '@/components/NewArrivals';
-import BlogSection from '@/components/BlogSection';
+import SocialProof from '@/components/SocialProof';
+import PromoBanner from '@/components/PromoBanner';
+import WhyShop from '@/components/WhyShop';
+import Location from '@/components/Location';
 import ReviewsSection from '@/components/ReviewsSection';
-import AppDownload from '@/components/AppDownload';
-import FlashDealPopup from '@/components/FlashDealPopup';
+import StoreExperience from '@/components/StoreExperience';
 import Footer from '@/components/Footer';
+import CartDrawer from '@/components/CartDrawer';
+import FlashDealPopup from '@/components/FlashDealPopup';
 
 export default function HomePage() {
     return (
-        <main className="w-full bg-white min-h-screen relative font-sans text-gray-900 pb-10 overflow-x-hidden">
+        <main className="min-h-screen bg-[#0f1115] pb-20 md:pb-0 font-sans text-white selection:bg-[#E11D2E]/20 selection:text-[#E11D2E]">
             <Navbar />
             <Hero />
-            <OffersMarquee />
-            <CategoryGrid />
-            <FlashDealPopup />
-            <DailyOffers />
-            <FeaturedProducts />
-            <NewArrivals />
-            <BlogSection />
-            <ReviewsSection />
-            <AppDownload />
+
+            <div className="space-y-8 md:space-y-12">
+                <CategoryGrid />
+                <PromoBanner />
+                <Deals />
+                <FeaturedProducts />
+                <SocialProof />
+                <ReviewsSection />
+                <WhyShop />
+                <Location />
+            </div>
+
             <Footer />
+            <Footer />
+            <CartDrawer />
+            <FlashDealPopup />
         </main>
     );
 }

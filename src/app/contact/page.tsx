@@ -29,7 +29,7 @@ export default function ContactPage() {
     ];
 
     return (
-        <main className="min-h-screen bg-dark text-text-primary font-sans">
+        <main className="min-h-screen bg-[#0f1115] text-white font-sans">
             <Navbar />
 
             <div className="pt-24 pb-10 px-4 max-w-6xl mx-auto">
@@ -38,7 +38,7 @@ export default function ContactPage() {
                     animate={{ opacity: 1, y: 0 }}
                     className="text-3xl md:text-5xl font-display font-bold mb-10 text-center"
                 >
-                    Contact Us & <span className="text-green">Policies</span>
+                    Contact Us & <span className="text-[#E11D2E]">Policies</span>
                 </motion.h1>
 
                 <div className="grid md:grid-cols-2 gap-10">
@@ -49,17 +49,17 @@ export default function ContactPage() {
                         transition={{ delay: 0.1 }}
                         className="space-y-8"
                     >
-                        <div className="bg-dark-card border border-white/5 rounded-3xl p-8 hover:border-green/30 transition-colors shadow-lg">
+                        <div className="bg-[#1c212b] border border-[#2a3140] rounded-3xl p-8 hover:border-[#E11D2E]/30 transition-colors shadow-lg">
                             <h2 className="text-2xl font-bold mb-6 text-white">Mukesh Departmental Store</h2>
 
                             <div className="space-y-6">
                                 <div className="flex gap-4">
-                                    <div className="w-12 h-12 bg-green/10 rounded-full flex items-center justify-center shrink-0 text-green">
+                                    <div className="w-12 h-12 bg-[#2a3140] rounded-full flex items-center justify-center shrink-0 text-[#E11D2E]">
                                         <MapPin size={24} />
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-white mb-1">Visit Us</h3>
-                                        <p className="text-text-secondary text-sm leading-relaxed">
+                                        <p className="text-[#b8c0cc] text-sm leading-relaxed">
                                             565-KA/226-A, opposite Police Chowki Saraffa, <br />
                                             Amrudhi Bagh, Amrudhai Bag, Alambagh, <br />
                                             Lucknow, Uttar Pradesh 226005
@@ -73,8 +73,8 @@ export default function ContactPage() {
                                     </div>
                                     <div>
                                         <h3 className="font-bold text-white mb-1">Call Us</h3>
-                                        <p className="text-text-secondary text-sm">094153 30844</p>
-                                        <p className="text-xs text-text-secondary mt-1">Mon - Sun, 8:00 AM - 10:00 PM</p>
+                                        <p className="text-[#b8c0cc] text-sm">094153 30844</p>
+                                        <p className="text-xs text-[#b8c0cc] mt-1">Mon - Sun, 8:00 AM - 10:00 PM</p>
                                     </div>
                                 </div>
 
@@ -95,7 +95,7 @@ export default function ContactPage() {
                             <h2 className="text-xl font-bold mb-4 text-white">Store Policies</h2>
                             <div className="space-y-3">
                                 {policies.map((policy, idx) => (
-                                    <div key={idx} className="bg-dark-card border border-white/5 rounded-xl overflow-hidden">
+                                    <div key={idx} className="bg-[#161a22] border border-[#2a3140] rounded-xl overflow-hidden">
                                         <button
                                             onClick={() => setOpenPolicy(openPolicy === idx ? null : idx)}
                                             className="w-full flex justify-between items-center p-4 hover:bg-white/5 transition-colors text-left"
@@ -111,7 +111,7 @@ export default function ContactPage() {
                                             animate={{ height: openPolicy === idx ? 'auto' : 0 }}
                                             className="overflow-hidden"
                                         >
-                                            <p className="p-4 pt-0 text-sm text-text-secondary leading-relaxed border-t border-white/5">
+                                            <p className="p-4 pt-0 text-sm text-[#b8c0cc] leading-relaxed border-t border-[#2a3140]">
                                                 {policy.content}
                                             </p>
                                         </motion.div>
@@ -129,31 +129,31 @@ export default function ContactPage() {
                         className="bg-dark-card border border-white/5 rounded-3xl p-8 h-fit sticky top-24"
                     >
                         <h2 className="text-2xl font-bold mb-2 text-white">Send us a Message</h2>
-                        <p className="text-text-secondary text-sm mb-6">Have a query? We will get back to you within 2 hours.</p>
+                        <p className="text-[#b8c0cc] text-sm mb-6">Have a query? We will get back to you within 2 hours.</p>
 
                         <form className="space-y-4" onSubmit={(e) => e.preventDefault()}>
                             <div className="grid grid-cols-2 gap-4">
                                 <div className="space-y-1">
-                                    <label className="text-xs font-bold text-text-primary uppercase">Name</label>
-                                    <input type="text" className="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm focus:border-green outline-none transition-colors" placeholder="John Doe" />
+                                    <label className="text-xs font-bold text-white uppercase">Name</label>
+                                    <input type="text" className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-sm focus:border-[#E11D2E] outline-none transition-colors" placeholder="John Doe" />
                                 </div>
                                 <div className="space-y-1">
-                                    <label className="text-xs font-bold text-text-primary uppercase">Phone</label>
-                                    <input type="tel" className="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm focus:border-green outline-none transition-colors" placeholder="9876543210" />
+                                    <label className="text-xs font-bold text-white uppercase">Phone</label>
+                                    <input type="tel" className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-sm focus:border-[#E11D2E] outline-none transition-colors" placeholder="9876543210" />
                                 </div>
                             </div>
 
                             <div className="space-y-1">
-                                <label className="text-xs font-bold text-text-primary uppercase">Email</label>
-                                <input type="email" className="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm focus:border-green outline-none transition-colors" placeholder="john@example.com" />
+                                <label className="text-xs font-bold text-white uppercase">Email</label>
+                                <input type="email" className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-sm focus:border-[#E11D2E] outline-none transition-colors" placeholder="john@example.com" />
                             </div>
 
                             <div className="space-y-1">
-                                <label className="text-xs font-bold text-text-primary uppercase">Message</label>
-                                <textarea className="w-full bg-dark border border-white/10 rounded-xl p-3 text-sm h-32 resize-none focus:border-green outline-none transition-colors" placeholder="How can we help you?" />
+                                <label className="text-xs font-bold text-white uppercase">Message</label>
+                                <textarea className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-sm h-32 resize-none focus:border-[#E11D2E] outline-none transition-colors" placeholder="How can we help you?" />
                             </div>
 
-                            <button className="w-full bg-green text-dark font-bold py-3.5 rounded-xl hover:bg-green-hover transition-colors shadow-lg shadow-green/20">
+                            <button className="w-full bg-[#E11D2E] text-white font-bold py-3.5 rounded-xl hover:bg-[#C2000B] transition-colors shadow-lg shadow-red-900/20">
                                 Send Message
                             </button>
                         </form>

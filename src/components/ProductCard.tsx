@@ -1,7 +1,7 @@
 'use client';
 
 import React from 'react';
-import { Plus, Minus, Star } from 'lucide-react';
+import { Plus, Minus, Star, ShoppingCart, Heart } from 'lucide-react';
 import { motion } from 'framer-motion';
 import { useCart } from '@/context/CartContext';
 import { ProductProps } from '@/types/product';
@@ -48,76 +48,72 @@ export default function ProductCard({ product }: { product: ProductProps }) {
 
     return (
         <motion.div
-            whileHover={{ y: -8 }}
-            className="group relative bg-[#FFF7F7] border border-red-100 rounded-2xl p-3 flex flex-col gap-3 shadow-sm hover:shadow-[0_10px_30px_rgba(225,29,46,0.15)] hover:border-[#E11D2E]/20 transition-all duration-300 w-full min-w-[160px] md:min-w-[200px]"
+            whileHover={{ y: -6 }}
+            className="group relative w-full bg-[#1c212b] rounded-2xl border border-[#2a3140] p-4 transition-all duration-300 hover:shadow-[0_10px_30px_rgba(0,0,0,0.3)]"
         >
+            {/* Wishlist Icon */}
+            <button className="absolute top-3 right-3 p-1.5 rounded-full bg-[#2a3140] text-gray-400 hover:text-[#E11D2E] hover:bg-[#E11D2E]/10 transition-colors z-10 opacity-0 group-hover:opacity-100">
+                <Heart size={16} />
+            </button>
+
             {/* Badges */}
             <div className="absolute top-3 left-3 z-10 flex flex-col gap-1">
                 {product.discount && (
-                    <span className="bg-[#E11D2E] text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide shadow-md shadow-red-500/20">
+                    <span className="bg-[#E11D2E] text-white text-[10px] font-bold px-2 py-0.5 rounded-md shadow-sm">
                         {product.discount}
-                    </span>
-                )}
-                {product.isNew && (
-                    <span className="bg-blue-600 text-white text-[10px] font-bold px-2 py-1 rounded-full uppercase tracking-wide">
-                        New
                     </span>
                 )}
             </div>
 
             {/* Image Area */}
-            <div className="relative h-32 md:h-40 bg-white rounded-xl flex items-center justify-center p-4 overflow-hidden group-hover:bg-white transition-colors border border-gray-50">
+            <div className="relative w-full h-40 mb-4 flex items-center justify-center p-2">
                 <motion.img
+                    whileHover={{ scale: 1.05 }}
                     src={product.image}
                     alt={product.title}
-                    className="w-full h-full object-contain drop-shadow-md mix-blend-multiply"
-                    whileHover={{ scale: 1.1, rotate: 5 }}
-                    transition={{ duration: 0.3 }}
+                    className="w-full h-full object-contain drop-shadow-sm"
                 />
             </div>
 
             {/* Content */}
-            <div className="flex flex-col flex-1 gap-1">
-                <div className="flex justify-between items-start">
-                    <span className="text-gray-500 text-xs bg-white px-2 py-0.5 rounded-md border border-gray-100">{product.weight}</span>
-                    <div className="flex items-center gap-1 bg-red-50 px-1.5 py-0.5 rounded-md">
-                        <span className="text-[#E11D2E] text-xs font-bold">{product.rating || 4.5}</span>
-                        <Star size={10} className="fill-current text-[#E11D2E]" />
+            <div className="flex flex-col gap-1">
+                <div className="flex items-center gap-1 mb-1">
+                    <div className="bg-green-900/30 text-green-400 text-[10px] font-bold px-1.5 py-0.5 rounded flex items-center gap-0.5">
+                        4.8 <Star size={8} fill="currentColor" />
                     </div>
+                    <span className="text-[10px] text-gray-400 font-medium">1.2k reviews</span>
                 </div>
 
-                <h3 className="text-gray-900 font-bold text-sm md:text-base leading-tight mt-1 line-clamp-2 min-h-[2.5em] group-hover:text-[#E11D2E] transition-colors">
+                <h3 className="text-white font-bold text-sm leading-tight line-clamp-2 h-[2.5em] group-hover:text-[#E11D2E] transition-colors" title={product.title}>
                     {product.title}
                 </h3>
 
-                <div className="flex items-end gap-2 mt-auto">
+                <p className="text-gray-400 text-xs font-medium">{product.weight}</p>
+
+                <div className="flex items-center justify-between mt-3 pt-3 border-t border-[#2a3140]">
                     <div className="flex flex-col">
-                        <span className="text-gray-400 text-xs line-through">{product.originalPrice}</span>
-                        <span className="text-gray-900 font-bold text-lg">{product.price}</span>
+                        <span className="text-gray-500 text-xs line-through">{product.originalPrice}</span>
+                        <span className="text-white font-bold text-lg">{product.price}</span>
                     </div>
 
-                    {/* Add Button / Quantity Stepper */}
-                    <div className="ml-auto">
-                        {quantity === 0 ? (
-                            <motion.button
-                                whileTap={{ scale: 0.9 }}
-                                onClick={handleAdd}
-                                className="bg-white text-[#E11D2E] border border-[#E11D2E] hover:bg-[#E11D2E] hover:text-white px-3 py-1.5 rounded-lg text-sm font-bold flex items-center gap-1 transition-all shadow-sm hover:shadow-red-500/20"
-                            >
-                                ADD <Plus size={14} />
-                            </motion.button>
-                        ) : (
-                            <div className="flex items-center bg-[#E11D2E] text-white rounded-lg overflow-hidden h-8 shadow-md shadow-red-500/30">
-                                <button onClick={handleDecrement} className="px-2 h-full hover:bg-black/10 transition-colors">
-                                    <Minus size={14} strokeWidth={3} />
-                                </button>
-                                <span className="font-bold text-sm px-1 min-w-[20px] text-center">{quantity}</span>
-                                <button onClick={handleIncrement} className="px-2 h-full hover:bg-black/10 transition-colors">
-                                    <Plus size={14} strokeWidth={3} />
-                                </button>
-                            </div>
-                        )}
-                    </div>
+                    {quantity === 0 ? (
+                        <button
+                            onClick={handleAdd}
+                            className="bg-transparent border border-[#E11D2E] text-[#E11D2E] hover:bg-[#E11D2E] hover:text-white px-5 py-1.5 rounded-lg text-sm font-bold transition-all shadow-sm active:scale-95"
+                        >
+                            ADD
+                        </button>
+                    ) : (
+                        <div className="flex items-center bg-[#E11D2E] text-white rounded-lg h-9 shadow-md">
+                            <button onClick={handleDecrement} className="px-3 h-full hover:bg-black/10 transition-colors">
+                                <Minus size={14} />
+                            </button>
+                            <span className="font-bold text-sm px-1 min-w-[20px] text-center">{quantity}</span>
+                            <button onClick={handleIncrement} className="px-3 h-full hover:bg-black/10 transition-colors">
+                                <Plus size={14} />
+                            </button>
+                        </div>
+                    )}
                 </div>
             </div>
         </motion.div>

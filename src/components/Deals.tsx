@@ -2,18 +2,32 @@
 
 import React from 'react';
 import ProductCard from './ProductCard';
-import { Timer } from 'lucide-react';
+import { Timer, ArrowRight } from 'lucide-react';
 
 export default function Deals() {
     return (
-        <section className="py-12 px-4 bg-dark/50 border-y border-white/5">
+        <section className="py-16 px-4 bg-[#F9FAFB] border-y border-gray-100" id="offers">
             <div className="max-w-7xl mx-auto">
-                <div className="flex items-center gap-3 mb-8">
-                    <h2 className="text-2xl md:text-3xl font-bold text-white">Flash Deals</h2>
-                    <div className="flex items-center gap-1.5 px-3 py-1 bg-red-500/20 border border-red-500/40 text-red-500 rounded-lg text-sm font-bold animate-pulse">
-                        <Timer size={14} />
-                        <span>Ending in 04:32:12</span>
+                <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+
+                    <div className="flex items-center gap-4">
+                        <div className="flex flex-col">
+                            <h2 className="text-3xl font-display font-bold text-gray-900">Today's Deals</h2>
+                            <p className="text-gray-500 text-sm">Best prices for the next 24 hours</p>
+                        </div>
+
+                        {/* Countdown Timer */}
+                        <div className="flex items-center gap-2 bg-[#E11D2E] text-white px-4 py-2 rounded-lg shadow-lg shadow-red-500/30 animate-pulse">
+                            <Timer size={18} />
+                            <div className="flex gap-1 font-mono font-bold text-lg leading-none">
+                                <span>04</span>:<span>32</span>:<span>12</span>
+                            </div>
+                        </div>
                     </div>
+
+                    <button className="hidden md:flex items-center gap-2 text-sm font-bold text-[#E11D2E] hover:bg-red-50 px-4 py-2 rounded-full transition-colors">
+                        View All Deals <ArrowRight size={16} />
+                    </button>
                 </div>
 
                 {/* Horizontal Scroll Container */}
@@ -25,9 +39,8 @@ export default function Deals() {
                             price: "₹72",
                             originalPrice: "₹76",
                             weight: "1 L",
-                            image: "https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg",
-                            discount: "5% OFF",
-                            time: "8 MINS"
+                            image: "/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png",
+                            discount: "5% OFF"
                         },
                         {
                             id: 'deal-2',
@@ -35,9 +48,8 @@ export default function Deals() {
                             price: "₹45",
                             originalPrice: "₹50",
                             weight: "115g",
-                            image: "https://www.bigbasket.com/media/uploads/p/l/294297-3_3-lays-potato-chips-indias-magic-masala.jpg",
-                            discount: "10% OFF",
-                            time: "15 MINS"
+                            image: "/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png",
+                            discount: "10% OFF"
                         },
                         {
                             id: 'deal-3',
@@ -45,9 +57,8 @@ export default function Deals() {
                             price: "₹38",
                             originalPrice: "₹40",
                             weight: "750ml",
-                            image: "https://www.bigbasket.com/media/uploads/p/l/251006_11-coca-cola-soft-drink-original-taste.jpg",
-                            discount: "5% OFF",
-                            time: "12 MINS"
+                            image: "/images/Gemini_Generated_Image_socfc6socfc6socf.png",
+                            discount: "5% OFF"
                         },
                         {
                             id: 'deal-4',
@@ -55,9 +66,8 @@ export default function Deals() {
                             price: "₹145",
                             originalPrice: "₹160",
                             weight: "1 L",
-                            image: "https://www.bigbasket.com/media/uploads/p/l/274145-3_3-fortune-sunlite-refined-sunflower-oil.jpg",
-                            discount: "9% OFF",
-                            time: "20 MINS"
+                            image: "/images/Gemini_Generated_Image_yzlnbayzlnbayzln.png",
+                            discount: "9% OFF"
                         },
                         {
                             id: 'deal-5',
@@ -65,13 +75,13 @@ export default function Deals() {
                             price: "₹255",
                             originalPrice: "₹280",
                             weight: "5 kg",
-                            image: "https://www.bigbasket.com/media/uploads/p/l/126903-2_3-aashirvaad-shudh-chakki-atta.jpg",
-                            discount: "8% OFF",
-                            time: "25 MINS"
+                            image: "/images/Gemini_Generated_Image_dq0kgcdq0kgcdq0k.png",
+                            discount: "8% OFF"
                         }
                     ].map((product) => (
                         <div key={product.id} className="min-w-[200px] md:min-w-[240px] snap-center">
                             <ProductCard product={product} />
+                            <div className="mt-2 text-center text-xs font-bold text-[#E11D2E]">Only 5 left!</div>
                         </div>
                     ))}
                 </div>
@@ -79,3 +89,4 @@ export default function Deals() {
         </section>
     );
 }
+

@@ -14,22 +14,39 @@ export default function ReviewsSection() {
     const [reviews, setReviews] = useState(initialReviews);
     const [showForm, setShowForm] = useState(false);
 
+    const [newReview, setNewReview] = useState({ name: '', text: '', rating: 5 });
+
+    const handleSubmit = () => {
+        if (!newReview.name || !newReview.text) return;
+        const review = {
+            id: reviews.length + 1,
+            name: newReview.name,
+            rating: newReview.rating,
+            date: 'Just now',
+            text: newReview.text,
+            likes: 0
+        };
+        setReviews([review, ...reviews]);
+        setNewReview({ name: '', text: '', rating: 5 });
+        setShowForm(false);
+    };
+
     return (
-        <section className="py-16 px-4 max-w-4xl mx-auto">
+        <section className="py-16 px-4 max-w-4xl mx-auto bg-[#0f1115]">
             <div className="flex flex-col md:flex-row justify-between items-end mb-10 gap-4">
                 <div>
-                    <h2 className="text-2xl md:text-3xl font-display font-bold text-text-primary mb-2">Customer Stories</h2>
+                    <h2 className="text-2xl md:text-3xl font-display font-bold text-white mb-2">Customer Stories</h2>
                     <div className="flex items-center gap-2">
                         <div className="flex text-yellow-500">
                             {[1, 2, 3, 4, 5].map(i => <Star key={i} size={20} className="fill-current" />)}
                         </div>
-                        <span className="text-text-primary font-bold">4.8/5</span>
-                        <span className="text-text-secondary text-sm">(based on 1200+ reviews)</span>
+                        <span className="text-white font-bold">4.8/5</span>
+                        <span className="text-[#b8c0cc] text-sm">(based on 1200+ reviews)</span>
                     </div>
                 </div>
                 <button
                     onClick={() => setShowForm(!showForm)}
-                    className="bg-green text-dark font-bold px-6 py-3 rounded-xl hover:bg-green-hover transition-colors shadow-lg shadow-green/20"
+                    className="bg-[#E11D2E] text-white font-bold px-6 py-3 rounded-xl hover:bg-[#C2000B] transition-colors shadow-lg shadow-red-900/20"
                 >
                     {showForm ? 'Cancel Review' : 'Write a Review'}
                 </button>
@@ -40,18 +57,38 @@ export default function ReviewsSection() {
                 <motion.div
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: 'auto' }}
-                    className="bg-dark-card border border-white/5 p-6 rounded-2xl mb-8 overflow-hidden"
+                    className="bg-[#1c212b] border border-[#2a3140] p-6 rounded-2xl mb-8 overflow-hidden"
                 >
                     <h3 className="text-lg font-bold text-white mb-4">Share you experience</h3>
                     <div className="space-y-4">
                         <div className="flex gap-2 mb-4">
                             {[1, 2, 3, 4, 5].map(i => (
-                                <Star key={i} size={28} className="text-gray-600 hover:text-yellow-500 cursor-pointer transition-colors" />
+                                <Star
+                                    key={i}
+                                    size={28}
+                                    className={`cursor-pointer transition-colors ${i <= newReview.rating ? 'text-yellow-500 fill-yellow-500' : 'text-gray-600'}`}
+                                    onClick={() => setNewReview({ ...newReview, rating: i })}
+                                />
                             ))}
                         </div>
-                        <input className="w-full bg-dark border border-white/10 rounded-xl p-3 text-text-primary focus:border-green outline-none" placeholder="Your Name" />
-                        <textarea className="w-full bg-dark border border-white/10 rounded-xl p-3 text-text-primary h-24 focus:border-green outline-none resize-none" placeholder="Tell us about your delivery..." />
-                        <button className="w-full bg-white text-dark font-bold py-3 rounded-xl hover:bg-gray-200 transition-colors">Submit Review</button>
+                        <input
+                            className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-white focus:border-[#E11D2E] outline-none"
+                            placeholder="Your Name"
+                            value={newReview.name}
+                            onChange={(e) => setNewReview({ ...newReview, name: e.target.value })}
+                        />
+                        <textarea
+                            className="w-full bg-[#0f1115] border border-[#2a3140] rounded-xl p-3 text-white h-24 focus:border-[#E11D2E] outline-none resize-none"
+                            placeholder="Tell us about your delivery..."
+                            value={newReview.text}
+                            onChange={(e) => setNewReview({ ...newReview, text: e.target.value })}
+                        />
+                        <button
+                            onClick={handleSubmit}
+                            className="w-full bg-white text-black font-bold py-3 rounded-xl hover:bg-gray-200 transition-colors"
+                        >
+                            Submit Review
+                        </button>
                     </div>
                 </motion.div>
             )}
@@ -63,26 +100,26 @@ export default function ReviewsSection() {
                         key={review.id}
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
-                        className="bg-dark-card border border-white/5 p-6 rounded-2xl hover:border-white/10 transition-colors"
+                        className="bg-[#1c212b] border border-[#2a3140] p-6 rounded-2xl hover:border-[#E11D2E]/30 transition-colors"
                     >
                         <div className="flex justify-between items-start mb-3">
                             <div className="flex items-center gap-3">
-                                <div className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-green">
+                                <div className="w-10 h-10 bg-[#2a3140] rounded-full flex items-center justify-center text-[#E11D2E]">
                                     <User size={20} />
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-white text-sm">{review.name}</h4>
-                                    <span className="text-xs text-text-secondary">{review.date}</span>
+                                    <span className="text-xs text-[#b8c0cc]">{review.date}</span>
                                 </div>
                             </div>
                             <div className="flex text-yellow-500">
                                 {[...Array(review.rating)].map((_, i) => <Star key={i} size={14} className="fill-current" />)}
                             </div>
                         </div>
-                        <p className="text-text-secondary text-sm leading-relaxed mb-4">
+                        <p className="text-[#b8c0cc] text-sm leading-relaxed mb-4">
                             "{review.text}"
                         </p>
-                        <div className="flex items-center gap-4 text-xs text-text-secondary">
+                        <div className="flex items-center gap-4 text-xs text-[#b8c0cc]">
                             <button className="flex items-center gap-1 hover:text-white transition-colors">
                                 <ThumbsUp size={14} /> Helpful ({review.likes})
                             </button>
@@ -91,7 +128,7 @@ export default function ReviewsSection() {
                 ))}
             </div>
 
-            <button className="w-full mt-8 py-3 text-sm text-green font-bold hover:underline">
+            <button className="w-full mt-8 py-3 text-sm text-[#E11D2E] font-bold hover:underline">
                 Read All 1,245 Reviews
             </button>
         </section>

@@ -11,7 +11,7 @@ const posts = [
         id: 1,
         title: "5 Quick & Healthy Breakfast Recipes for Busy Mornings",
         excerpt: "Start your day right with these nutritious meals that take less than 15 minutes to prepare.",
-        image: "https://images.unsplash.com/photo-1493770348161-369560ae357d?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_b5mg9xb5mg9xb5mg.png",
         date: "Feb 15, 2026",
         author: "Priya Singh",
         category: "Recipes"
@@ -20,7 +20,7 @@ const posts = [
         id: 2,
         title: "The Ultimate Guide to Choosing Fresh Vegetables",
         excerpt: "Learn the secrets of picking the perfect tomatoes, crisp greens, and ripe fruits every time.",
-        image: "https://images.unsplash.com/photo-1573246123716-6b223390d709?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_2zif1h2zif1h2zif.png",
         date: "Feb 12, 2026",
         author: "Mukesh Kumar",
         category: "Tips & Tricks"
@@ -29,7 +29,7 @@ const posts = [
         id: 3,
         title: "Why Organic Milk is Better for Your Family",
         excerpt: "Discover the health benefits of switching to organic milk and how it differs from regular milk.",
-        image: "https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png",
         date: "Feb 10, 2026",
         author: "Dr. R.K. Gupta",
         category: "Health"
@@ -38,7 +38,7 @@ const posts = [
         id: 4,
         title: "Top 10 Snacks for Your Movie Night",
         excerpt: "Planning a binge-watch session? Here are the best munchies to keep you company.",
-        image: "https://images.unsplash.com/photo-1566478989037-eec170784d0b?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png",
         date: "Feb 08, 2026",
         author: "Team Mukesh",
         category: "Lifestyle"
@@ -47,7 +47,7 @@ const posts = [
         id: 5,
         title: "How to Store Green Leafy Vegetables for Longer",
         excerpt: "Stop throwing away spinach! Here is how you can keep your greens fresh for up to a week.",
-        image: "https://images.unsplash.com/photo-1576045057995-568f588f82fb?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_e7hwz4e7hwz4e7hw.png",
         date: "Feb 05, 2026",
         author: "Priya Singh",
         category: "Kitchen Hacks"
@@ -56,7 +56,7 @@ const posts = [
         id: 6,
         title: "Benefits of Dry Fruits in Winter",
         excerpt: "Keep warm and healthy this winter with these essential dry fruits in your diet.",
-        image: "https://images.unsplash.com/photo-1596547610057-047b4da22295?auto=format&fit=crop&q=80&w=800",
+        image: "/images/Gemini_Generated_Image_fvw538fvw538fvw5.png",
         date: "Feb 01, 2026",
         author: "Dr. A. Mishra",
         category: "Health"

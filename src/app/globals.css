@@ -6,43 +6,36 @@
   --font-sans: var(--font-sans);
   --font-display: var(--font-display);
 
-  /* Premium White Theme */
-  --color-dark: #FFFFFF;
-  /* Pure White Background */
-  --color-dark-card: #FFF7F7;
-  /* Soft Red Tinted Card */
-  --color-dark-border: #FECACA;
-  /* Red 200 Border */
+  /* Soft Dark Premium Palette */
+  --color-primary: #ffffff;
+  /* White Text */
+  --color-secondary: #b8c0cc;
+  /* Light Grey Text */
+  --color-accent: #E11D2E;
+  /* Elegant Neutral Accent - kept red for brand but can be adjusted */
+  --color-accent-hover: #BE123C;
 
-  /* Premium Red Brand Colors */
-  --color-green: #E11D2E;
-  /* Primary Brand Red */
-  --color-green-hover: #BE123C;
-  /* Secondary Red */
-  --color-green-glow: rgba(225, 29, 46, 0.4);
-  /* Red Glow */
+  --color-surface: #161a22;
+  /* Dark Charcoal Section Background */
+  --color-surface-hover: #1c212b;
+  /* Card Background (Slightly lighter) */
+  --color-border-subtle: #2a3140;
+  /* Subtle Grey Border */
 
-  /* Accents */
-  --color-yellow: #E11D2E;
-  /* Making discount badges match brand red for consistency, or keep yellow? User said "Red discount badge" */
-  --color-yellow-hover: #BE123C;
+  --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.5), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-medium: 0 10px 15px -3px rgba(0, 0, 0, 0.6), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
+  --shadow-lift: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 10px 10px -5px rgba(0, 0, 0, 0.5);
 
-  --color-text-primary: #111827;
-  /* Gray 900 */
-  --color-text-secondary: #6B7280;
-  /* Gray 500 */
-
-  --animate-float: float 6s ease-in-out infinite;
-  --animate-lift: lift 0.3s ease-out forwards;
-  --animate-pulse-slow: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-  --animate-slide-in-right: slideInRight 0.3s ease-out forwards;
+  --animate-kenburns: kenburns 20s ease-out infinite alternate;
+  --animate-fade-in: fade-in 1s ease-out forwards;
 }
 
 :root {
-  --background: #FFFFFF;
-  --foreground: #111827;
-  --font-sans: var(--font-inter);
-  --font-display: var(--font-poppins);
+  --background: #0f1115;
+  /* Very Dark Grey Background */
+  --foreground: #ffffff;
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Poppins', sans-serif;
 }
 
 body {
@@ -50,93 +43,86 @@ body {
   color: var(--foreground);
   font-family: var(--font-sans);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Base Styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  color: var(--foreground);
+}
+
+p {
+  color: var(--color-secondary);
 }
 
 /* Animations */
-@keyframes float {
-
-  0%,
-  100% {
-    transform: translateY(0px);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-@keyframes lift {
+@keyframes kenburns {
   0% {
-    transform: translateY(0);
-    box-shadow: 0 0 0 rgba(0, 0, 0, 0);
+    transform: scale(1);
   }
 
   100% {
-    transform: translateY(-4px);
-    box-shadow: 0 10px 30px rgba(225, 29, 46, 0.15);
+    transform: scale(1.1);
   }
 }
 
-@keyframes slideInRight {
-  from {
-    transform: translateX(100%);
+@keyframes fade-in {
+  0% {
     opacity: 0;
+    transform: translateY(10px);
   }
 
-  to {
-    transform: translateX(0);
+  100% {
     opacity: 1;
+    transform: translateY(0);
   }
 }
 
-/* Premium Utilities */
+/* Utilities */
 .glass {
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(28, 33, 43, 0.7);
+  /* Dark Glass based on surface color */
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(254, 202, 202, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-.glass-card {
-  background: #FFFFFF;
-  border: 1px solid #FEE2E2;
-  box-shadow: 0 4px 6px -1px rgba(225, 29, 46, 0.05);
+.card-dark {
+  background-color: var(--color-surface-hover);
+  border: 1px solid var(--color-border-subtle);
 }
 
-.glow-green {
-  box-shadow: 0 0 20px -5px var(--color-green-glow);
+.container-custom {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
 }
 
-.glow-text {
-  text-shadow: 0 0 10px rgba(225, 29, 46, 0.2);
-}
-
-.btn-gradient {
-  background: linear-gradient(135deg, #E11D2E, #BE123C);
-  color: white;
-}
-
-/* Custom Scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #FFFFFF;
+  background: #0f1115;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #E5E7EB;
-  border-radius: 4px;
+  background-color: #2a3140;
+  border-radius: 20px;
+  border: 2px solid #0f1115;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #D1D5DB;
-}
-
-.text-gradient {
-  background: linear-gradient(135deg, #E11D2E, #BE123C);
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  background-color: #4B5563;
 }

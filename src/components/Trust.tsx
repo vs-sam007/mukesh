@@ -34,7 +34,7 @@ export default function Trust() {
                     {/* Storefront Image */}
                     <div
                         className="w-full h-full bg-cover bg-center"
-                        style={{ backgroundImage: "url('https://images.unsplash.com/photo-1604719312566-8912e9227c6a?auto=format&fit=crop&q=80&w=2574&ixlib=rb-4.0.3')" }}
+                        style={{ backgroundImage: "url('/images/Gemini_Generated_Image_gvnvgjgvnvgjgvnv.png')" }}
                     />
 
                     {/* Floating Badge */}

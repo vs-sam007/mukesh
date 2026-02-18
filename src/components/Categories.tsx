@@ -5,14 +5,14 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 const categories = [
-    { name: 'Fruits & Vegetables', img: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=600', count: '120+ Items' },
-    { name: 'Atta, Rice & Pulses', img: 'https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&q=80&w=600', count: '80+ Items' },
-    { name: 'Dairy, Bread & Eggs', img: 'https://images.unsplash.com/photo-1628088062854-d1870b4553da?auto=format&fit=crop&q=80&w=600', count: '50+ Items' },
-    { name: 'Snacks & Munchies', img: 'https://images.unsplash.com/photo-1621939514649-28b12e816a8d?auto=format&fit=crop&q=80&w=600', count: '200+ Items' },
-    { name: 'Cold Drinks & Juices', img: 'https://images.unsplash.com/photo-1625772299848-391b6a87d7b3?auto=format&fit=crop&q=80&w=600', count: '60+ Items' },
-    { name: 'Cleaning & Household', img: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?auto=format&fit=crop&q=80&w=600', count: '90+ Items' },
-    { name: 'Personal Care', img: 'https://images.unsplash.com/photo-1556228720-1957be83f709?auto=format&fit=crop&q=80&w=600', count: '150+ Items' },
-    { name: 'Breakfast & Sauces', img: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80&w=600', count: '70+ Items' },
+    { name: 'Fruits & Vegetables', img: '/images/Gemini_Generated_Image_2zif1h2zif1h2zif.png', count: '120+ Items' },
+    { name: 'Atta, Rice & Pulses', img: '/images/Gemini_Generated_Image_dq0kgcdq0kgcdq0k.png', count: '80+ Items' },
+    { name: 'Dairy, Bread & Eggs', img: '/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png', count: '50+ Items' },
+    { name: 'Snacks & Munchies', img: '/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png', count: '200+ Items' },
+    { name: 'Cold Drinks & Juices', img: '/images/Gemini_Generated_Image_socfc6socfc6socf.png', count: '60+ Items' },
+    { name: 'Cleaning & Household', img: '/images/Gemini_Generated_Image_gvnvgjgvnvgjgvnv.png', count: '90+ Items' },
+    { name: 'Personal Care', img: '/images/Gemini_Generated_Image_n9c5ffn9c5ffn9c5.png', count: '150+ Items' },
+    { name: 'Breakfast & Sauces', img: '/images/Gemini_Generated_Image_b5mg9xb5mg9xb5mg.png', count: '70+ Items' },
 ];
 
 export default function Categories() {

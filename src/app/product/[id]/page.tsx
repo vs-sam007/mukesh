@@ -24,7 +24,7 @@ export default function ProductPage() {
                             20% OFF
                         </div>
                         <img
-                            src="https://www.bigbasket.com/media/uploads/p/l/306926-2_4-amul-homogenised-toned-milk.jpg"
+                            src="/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png"
                             alt="Amul Milk"
                             className="h-full object-contain hover:scale-105 transition-transform duration-500 drop-shadow-2xl"
                         />

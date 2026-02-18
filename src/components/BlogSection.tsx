@@ -8,7 +8,7 @@ const posts = [
     {
         id: 1,
         title: '5 Healthy Breakfast Ideas for Busy Mornings',
-        image: 'https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?auto=format&fit=crop&q=80&w=600',
+        image: '/images/Gemini_Generated_Image_b5mg9xb5mg9xb5mg.png',
         category: 'Recipes',
         readTime: '4 min',
         description: 'Quick, nutritious, and delicious breakfast options.'
@@ -16,7 +16,7 @@ const posts = [
     {
         id: 2,
         title: 'How to Keep Your Vegetables Fresh for Longer',
-        image: 'https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&q=80&w=600',
+        image: '/images/Gemini_Generated_Image_e7hwz4e7hwz4e7hw.png',
         category: 'Tips',
         readTime: '3 min',
         description: 'Simple hacks to extend the shelf life of your greens.'
@@ -24,7 +24,7 @@ const posts = [
     {
         id: 3,
         title: 'Easy 15-Minute Evening Snacks',
-        image: 'https://images.unsplash.com/photo-1621939514649-28b12e816a8d?auto=format&fit=crop&q=80&w=600',
+        image: '/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png',
         category: 'Recipes',
         readTime: '5 min',
         description: 'Tasty snack recipes that are ready in a flash.'

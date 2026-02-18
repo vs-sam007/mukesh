@@ -39,7 +39,7 @@ export default function FilterSidebar() {
                 <h3 className="font-bold text-white flex items-center gap-2">
                     <SlidersHorizontal size={18} /> Filters
                 </h3>
-                <button className="text-xs text-green-400 hover:text-green-300 font-medium">Clear All</button>
+                <button className="text-xs text-[#E11D2E] hover:text-[#C2000B] font-medium">Clear All</button>
             </div>
 
             <div className="space-y-6">
@@ -47,7 +47,7 @@ export default function FilterSidebar() {
                 <div className="border-b border-white/5 pb-6">
                     <h4 className="text-sm font-semibold text-gray-300 mb-4">Price Range</h4>
                     <div className="px-2">
-                        <input type="range" min="0" max="1000" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-green-500" />
+                        <input type="range" min="0" max="1000" className="w-full h-1 bg-white/10 rounded-lg appearance-none cursor-pointer accent-[#E11D2E]" />
                         <div className="flex justify-between text-xs text-gray-500 mt-2">
                             <span>₹0</span>
                             <span>₹1000+</span>
@@ -77,7 +77,7 @@ export default function FilterSidebar() {
                                     {section.options.map((option, idx) => (
                                         <label key={idx} className="flex items-center gap-3 cursor-pointer group">
                                             <div className="relative flex items-center">
-                                                <input type="checkbox" className="peer w-4 h-4 rounded border-gray-600 bg-white/5 text-green-500 focus:ring-green-500 focus:ring-offset-0 focus:ring-offset-transparent transition-all" />
+                                                <input type="checkbox" className="peer w-4 h-4 rounded border-gray-600 bg-white/5 text-[#E11D2E] focus:ring-[#E11D2E] focus:ring-offset-0 focus:ring-offset-transparent transition-all" />
                                             </div>
                                             <span className="text-sm text-gray-500 group-hover:text-gray-300 transition-colors">{option}</span>
                                         </label>

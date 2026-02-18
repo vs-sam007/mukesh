@@ -28,8 +28,8 @@ const CartContext = createContext<CartContextType | undefined>(undefined);
 export function CartProvider({ children }: { children: ReactNode }) {
     const [isDrawerOpen, setIsDrawerOpen] = useState(false);
     const [items, setItems] = useState<CartItem[]>([
-        { id: '1', name: 'Amul Taaza Fresh Toned Milk', price: 52, image: 'https://cdn-icons-png.flaticon.com/512/2553/2553691.png', quantity: 1, weight: '1 L' },
-        { id: '13', name: 'Lays Magic Masala Chips', price: 20, image: 'https://cdn-icons-png.flaticon.com/512/2553/2553629.png', quantity: 2, weight: '50 g' }
+        { id: '1', name: 'Amul Taaza Fresh Toned Milk', price: 52, image: '/images/Gemini_Generated_Image_w04n9iw04n9iw04n.png', quantity: 1, weight: '1 L' },
+        { id: '13', name: 'Lays Magic Masala Chips', price: 20, image: '/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png', quantity: 2, weight: '50 g' }
     ]);
 
     const openDrawer = () => setIsDrawerOpen(true);
