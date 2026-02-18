@@ -34,7 +34,7 @@ export default function HomePage() {
             </div>
 
             <Footer />
-            <Footer />
+
             <CartDrawer />
             <FlashDealPopup />
         </main>
