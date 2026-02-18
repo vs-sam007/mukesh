@@ -57,9 +57,13 @@ export default function CategoryPage() {
                     {/* Product Grid */}
                     <div className="flex-1">
                         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-                            {products.map((product) => (
-                                <ProductCard key={product.id} product={product} />
+                            {products.map((product, idx) => (
+                                <ProductCard
+                                    key={idx}
+                                    product={product}
+                                />
                             ))}
+
                         </div>
 
                         <div className="mt-12 flex justify-center">
