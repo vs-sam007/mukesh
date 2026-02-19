@@ -80,7 +80,7 @@ export default function Hero() {
             </AnimatePresence>
 
             {/* Content Overlay */}
-            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4">
+            <div className="absolute inset-0 z-20 flex flex-col items-center justify-center text-center px-4 pt-20 md:pt-0">
                 <AnimatePresence mode='wait'>
                     <motion.div
                         key={`text-${currentSlide}`}
@@ -90,11 +90,11 @@ export default function Hero() {
                         transition={{ duration: 0.5, ease: "easeOut" }}
                         className="max-w-5xl"
                     >
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-6 leading-tight tracking-tight drop-shadow-2xl">
+                        <h1 className="text-4xl md:text-7xl lg:text-8xl font-display font-bold text-white mb-4 md:mb-6 leading-tight tracking-tight drop-shadow-2xl">
                             {slides[currentSlide].title}
                         </h1>
 
-                        <p className="text-gray-300 text-lg md:text-2xl mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                        <p className="text-gray-300 text-base md:text-2xl mb-8 md:mb-12 max-w-3xl mx-auto font-light leading-relaxed">
                             {slides[currentSlide].subtext}
                         </p>
 

@@ -5,7 +5,7 @@ export default function TrustStrip() {
     return (
         <div className="bg-[#111827] text-white py-2 px-4 text-[10px] md:text-xs font-medium tracking-wide border-b border-gray-800">
             <div className="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-2">
-                <div className="flex items-center gap-4 md:gap-6 overflow-x-auto no-scrollbar whitespace-nowrap w-full md:w-auto justify-center md:justify-start">
+                <div className="flex items-center gap-4 md:gap-6 overflow-x-auto no-scrollbar whitespace-nowrap w-full md:w-auto justify-start md:justify-start px-2 md:px-0">
                     <span className="flex items-center gap-1.5 opacity-90 hover:opacity-100 transition-opacity">
                         <Truck size={12} className="text-[#E11D2E]" /> Free Delivery Above ₹499
                     </span>
