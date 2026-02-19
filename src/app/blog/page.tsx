@@ -40,7 +40,7 @@ const posts = [
         excerpt: "Planning a binge-watch session? Here are the best munchies to keep you company.",
         image: "/images/Gemini_Generated_Image_w5pgr1w5pgr1w5pg.png",
         date: "Feb 08, 2026",
-        author: "Team Mukesh",
+        author: "Team Departmental Store",
         category: "Lifestyle"
     },
     {

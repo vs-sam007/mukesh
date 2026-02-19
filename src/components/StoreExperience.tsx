@@ -68,7 +68,7 @@ export default function StoreExperience() {
                                     <MapPin size={20} />
                                 </div>
                                 <div>
-                                    <h4 className="font-bold text-white">Mukesh Departmental Store</h4>
+                                    <h4 className="font-bold text-white">Departmental Store</h4>
                                     <p className="text-[#b8c0cc] text-sm mt-1">565-KA/226-A, Opposite Police Chowki Saraffa, Amrudhi Bagh, Alambagh, Lucknow, UP 226005</p>
                                 </div>
                             </div>

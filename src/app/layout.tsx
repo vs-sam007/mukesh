@@ -19,7 +19,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "QuickKart | Groceries in Minutes",
+  title: "Departmental Store | Groceries in Minutes",
   description: "Fresh groceries delivered in 10-15 minutes. Fruits, vegetables, snacks, and more.",
 };
 

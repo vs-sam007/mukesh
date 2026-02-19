@@ -53,8 +53,7 @@ export default function Navbar() {
                                 M
                             </div>
                             <div className="flex flex-col leading-none">
-                                <span className="font-display font-bold text-lg text-white tracking-tight">Mukesh</span>
-                                <span className="text-[10px] uppercase tracking-widest text-[#b8c0cc] font-medium">Departmental Store</span>
+                                <span className="font-display font-bold text-lg text-white tracking-tight">Departmental Store</span>
                             </div>
                         </Link>
 

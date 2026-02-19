@@ -7,7 +7,7 @@ export default function FinalCTA() {
     return (
         <div className="bg-navy py-12 px-4 text-center">
             <div className="max-w-3xl mx-auto">
-                <h2 className="text-3xl font-bold text-white mb-4">Visit Mukesh Departmental Store Today</h2>
+                <h2 className="text-3xl font-bold text-white mb-4">Visit Departmental Store Today</h2>
                 <p className="text-slate-300 mb-8 max-w-xl mx-auto">
                     Your family store for everyday shopping. Experience the best quality groceries and household essentials under one roof.
                 </p>

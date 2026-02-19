@@ -29,7 +29,7 @@ export default function Location() {
                             <div className="flex gap-3">
                                 <MapPin className="text-[#E11D2E] shrink-0" size={20} />
                                 <p className="text-sm text-[#b8c0cc]">
-                                    <strong>Mukesh Departmental Store</strong><br />
+                                    <strong>Departmental Store</strong><br />
                                     565-KA/226-A, Opposite Police Chowki Saraffa,<br />
                                     Amrudhi Bagh, Alambagh, Lucknow, UP 226005
                                 </p>

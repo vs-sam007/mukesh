@@ -36,7 +36,7 @@ export default function AboutPage() {
                         transition={{ delay: 0.2 }}
                         className="text-text-secondary text-lg md:text-xl leading-relaxed"
                     >
-                        From a small kirana store in Alambagh to Lucknow&apos;s most trusted departmental store. This is the story of Mukesh Departmental Store.
+                        From a small kirana store in Alambagh to Lucknow&apos;s most trusted departmental store. This is the story of Departmental Store.
                     </motion.p>
                 </div>
             </section>
@@ -63,7 +63,7 @@ export default function AboutPage() {
                     >
                         <h2 className="text-3xl font-display font-bold text-white">Our Humble Beginnings</h2>
                         <p className="text-text-secondary leading-relaxed">
-                            Mukesh Departmental Store started as a dream in 1995. Mr. Mukesh Kumar wanted to create a place where families in Alambagh could find high-quality groceries without compromising on price.
+                            Departmental Store started as a dream in 1995. Mr. Mukesh Kumar wanted to create a place where families in Alambagh could find high-quality groceries without compromising on price.
                         </p>
                         <p className="text-text-secondary leading-relaxed">
                             What began as a 200 sq. ft. shop is now a comprehensive departmental store, but our core values remain the same: <strong>Freshness, Trust, and Community.</strong>

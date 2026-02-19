@@ -9,7 +9,7 @@ export default function Footer() {
             <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-12 mb-12">
 
                 <div className="lg:col-span-2">
-                    <h3 className="text-2xl font-display font-bold text-white mb-4">Mukesh Departmental<span className="text-[#E11D2E]">.</span></h3>
+                    <h3 className="text-2xl font-display font-bold text-white mb-4">Departmental Store<span className="text-[#E11D2E]">.</span></h3>
                     <p className="text-[#b8c0cc] mb-6 leading-relaxed max-w-sm">
                         Experience the future of grocery shopping. Fresh produce, daily essentials, and premium products delivered in minutes.
                     </p>
@@ -82,7 +82,7 @@ export default function Footer() {
             </div>
 
             <div className="max-w-7xl mx-auto pt-8 border-t border-[#2a3140] flex flex-col md:flex-row items-center justify-between gap-4">
-                <p className="text-gray-500 text-xs">© {new Date().getFullYear()} Mukesh Departmental Store. All rights reserved.</p>
+                <p className="text-gray-500 text-xs">© {new Date().getFullYear()} Departmental Store. All rights reserved.</p>
                 <div className="flex items-center gap-1 text-xs text-gray-400">
                     Made with <Heart size={12} className="text-[#E11D2E] fill-[#E11D2E]" /> in Lucknow
                 </div>

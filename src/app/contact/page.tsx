@@ -20,7 +20,7 @@ export default function ContactPage() {
         },
         {
             title: "Privacy Policy",
-            content: "Mukesh Departmental Store respects your privacy. We only collect necessary information (Name, Address, Phone) to process your orders. We do not share your data with third-party advertisers. Your location data is used solely for delivery tracking purposes."
+            content: "Departmental Store respects your privacy. We only collect necessary information (Name, Address, Phone) to process your orders. We do not share your data with third-party advertisers. Your location data is used solely for delivery tracking purposes."
         },
         {
             title: "Terms & Conditions",
@@ -50,7 +50,7 @@ export default function ContactPage() {
                         className="space-y-8"
                     >
                         <div className="bg-[#1c212b] border border-[#2a3140] rounded-3xl p-8 hover:border-[#E11D2E]/30 transition-colors shadow-lg">
-                            <h2 className="text-2xl font-bold mb-6 text-white">Mukesh Departmental Store</h2>
+                            <h2 className="text-2xl font-bold mb-6 text-white">Departmental Store</h2>
 
                             <div className="space-y-6">
                                 <div className="flex gap-4">
